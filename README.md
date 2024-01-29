@@ -21,4 +21,4 @@ The Rockbuster dataset was created by CareerFoundry for this project. The datase
 
 ## Visualizations
 
-Accompanying visualizations were created in Tableau Public and may be viewed in the attached [Tableau Workbook](https://public.tableau.com/app/profile/julia.reeves/viz/JSR-RockbusterStealthLLC/GeographicalDistribution)
+Accompanying visualizations were created in Tableau Public and may be viewed in the attached [Tableau Workbook](https://public.tableau.com/app/profile/julia.reeves/viz/JSR-RockbusterStealthLLC/GeographicalDistribution).

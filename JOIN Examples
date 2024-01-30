@@ -13,7 +13,7 @@ LIMIT 10
 # This query finds the top 10 cities within the above top 10 countries with the most customers.
 
 SELECT D.country,
-		   C.city
+	C.city
 	COUNT(customer_id) AS customers
 FROM customer A
 INNER JOIN address B ON A.address_id=B.address_id
@@ -27,21 +27,21 @@ LIMIT 10
 # This query specifies the names of the top 5 highest-paying customers from the above top 10 cities and countries.
 
 SELECT A.customer_id,
-		  A.first_name,
-		  A.last_name,
-      D.country,
-	  	C.city,
-		  SUM(E.amount) AS total_payment_amount
+	A.first_name,
+	A.last_name,
+	D.country,
+	C.city,
+	SUM(E.amount) AS total_payment_amount
 FROM customer A
 INNER JOIN address B ON A.address_id=B.address_id
 INNER JOIN city C ON B.city_id=C.city_id
 INNER JOIN country D ON C.country_id=D.country_id
 INNER JOIN payment E ON E.customer_id=A.customer_id
 GROUP BY A.customer_id,
-	       A.first_name,
-         A.last_name,
-         D.country,
-         C.city
+	A.first_name,
+        A.last_name,
+        D.country,
+        C.city
 HAVING city IN (‘Aurora’, ‘Acua’, ‘Citrus Heights’, ‘Iwaki’, ‘Ambattur’, ‘Shanwei’, ‘So Leopoldo’, ‘Teboksary’, ‘Tianjin’, ‘Cianjur’)
 ORDER BY total_payment_amount DESC
 LIMIT 5

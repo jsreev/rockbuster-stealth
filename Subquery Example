@@ -10,7 +10,7 @@ INNER JOIN country D ON C.country_id=D.country_id
 LEFT JOIN (SELECT A.customer_id,
               		A.first_name,
               		A.last_name,
-                  D.country,
+                    D.country,
               		C.city,
               		SUM(E.amount) AS total_amount_paid
             FROM customer A
@@ -19,10 +19,10 @@ LEFT JOIN (SELECT A.customer_id,
             INNER JOIN country D ON C.country_id=D.country_id
             INNER JOIN payment E ON E.customer_id=A.customer_id
             GROUP BY A.customer_id,
-                		A.first_name,
-                		A.last_name,
-                		D.country,
-                		C.city
+                    A.first_name,
+                    A.last_name,
+                    D.country,
+                    C.city
             HAVING city IN (‘Aurora’, ‘Acua’, ‘Citrus Heights’, ‘Iwaki’, ‘Ambattur’, ‘Shanwei’, ‘So Leopoldo’, ‘Teboksary’, ‘Tianjin’, ‘Cianjur’) 
             AND country IN (‘India’, ‘China’, ‘United States’, ‘Japan’, ‘Mexico’, ‘Brazil’, ‘Russian Federation’, ‘Philippines’, ‘Turkey’, ‘Indonesia’)
             ORDER BY total_amount_paid DESC
